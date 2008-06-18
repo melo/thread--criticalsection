@@ -8,7 +8,8 @@ my $builder = Module::Build->new(
     dist_author         => 'Pedro Melo <melo@cpan.org>',
     dist_version_from   => 'lib/Threads/CriticalSection.pm',
     build_requires => {
-        'Test::More' => 0,
+        'Thread::Semaphore' => 0,
+        'Test::More'         => 0,
     },
     add_to_cleanup      => [ 'Threads-CriticalSection-*' ],
     create_makefile_pl => 'traditional',

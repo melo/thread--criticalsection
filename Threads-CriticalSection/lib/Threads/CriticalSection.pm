@@ -3,6 +3,40 @@ package Threads::CriticalSection;
 use warnings;
 use strict;
 
+use Thread::Semaphore;
+
+sub new {
+  my $class = shift;
+  
+  return bless {
+    sem => Thread::Semaphore->new,
+  }, $class;
+}
+
+sub execute {
+  my ($self, $sub) = @_;
+  my $sem = $self->{sem};
+  
+  my $wantarray = wantarray;
+  my @result;
+  
+  $sem->down;
+  
+  eval {
+    if ($wantarray) { @result    = $sub->() }
+    else            { $result[0] = $sub->() }
+  };
+
+  my $e = $@;
+  $sem->up;
+  
+  die $e if $e;
+  
+  return @result if $wantarray;
+  return $result[0];
+}
+
+
 =head1 NAME
 
 Threads::CriticalSection - The great new Threads::CriticalSection!
