@@ -6,7 +6,7 @@ use Test::More tests => 4;
 use File::Temp qw/ :POSIX /;
 
 use threads;
-use Threads::CriticalSection;
+use Thread::CriticalSection;
 
 # create 25 pairs of threads, one increments, the other decrements a counter
 # run each thread for 100 loops
@@ -14,7 +14,7 @@ use Threads::CriticalSection;
 
 my $n_threads = 10;
 my $n_loops = 100;
-my $cs = Threads::CriticalSection->new;
+my $cs = Thread::CriticalSection->new;
 
 my $c_inside : shared;
 my $m_inside : shared;

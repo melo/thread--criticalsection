@@ -1,4 +1,4 @@
-package Threads::CriticalSection;
+package Thread::CriticalSection;
 
 use warnings;
 use strict;
@@ -40,12 +40,12 @@ sub execute {
 }
 
 
-42; # End of Threads::CriticalSection
+42; # End of Thread::CriticalSection
 
 
 =head1 NAME
 
-Threads::CriticalSection - Run a coderef inside a critical section
+Thread::CriticalSection - Run a coderef inside a critical section
 
 =head1 VERSION
 
@@ -54,9 +54,9 @@ Version 0.01
 =head1 SYNOPSIS
 
     use threads;
-    use Threads::CriticalSection;
+    use Thread::CriticalSection;
     
-    my $cs = Threads::CriticalSection->new;
+    my $cs = Thread::CriticalSection->new;
     
     $cs->execute(sub {
       # your code is protected by $cs
@@ -91,7 +91,7 @@ tests) are most welcome.
 
 =head1 DESCRIPTION
 
-The Threads::CriticalSection module allows you to run a coderef inside a
+The Thread::CriticalSection module allows you to run a coderef inside a
 critical section.
 
 All the details of entering and leaving the critical section are taken care
@@ -128,8 +128,8 @@ Pedro Melo, C<< <melo at cpan.org> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-threads-criticalsection at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Threads-CriticalSection>.  I will be notified, and then you'll
+Please report any bugs or feature requests to C<bug-thread-criticalsection at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Thread-CriticalSection>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -137,7 +137,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Threads::CriticalSection
+    perldoc Thread::CriticalSection
 
 
 You can also look for information at:
@@ -146,19 +146,19 @@ You can also look for information at:
 
 =item * RT: CPAN's request tracker
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Threads-CriticalSection>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Thread-CriticalSection>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Threads-CriticalSection>
+L<http://annocpan.org/dist/Thread-CriticalSection>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/Threads-CriticalSection>
+L<http://cpanratings.perl.org/d/Thread-CriticalSection>
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Threads-CriticalSection>
+L<http://search.cpan.org/dist/Thread-CriticalSection>
 
 =back
 

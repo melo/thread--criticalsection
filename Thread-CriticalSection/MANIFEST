@@ -2,7 +2,7 @@ Build.PL
 Changes
 MANIFEST
 README
-lib/Threads/CriticalSection.pm
+lib/Thread/CriticalSection.pm
 t/00-load.t
 t/01-concurrent.t
 t/pod-coverage.t

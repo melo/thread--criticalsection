@@ -1,4 +1,4 @@
-Threads-CriticalSection
+Thread-CriticalSection
 
 Allows you to run a coderef inside a critical section.
 
@@ -17,21 +17,21 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Threads::CriticalSection
+    perldoc Thread::CriticalSection
 
 You can also look for information at:
 
     RT, CPAN's request tracker
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Threads-CriticalSection
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Thread-CriticalSection
 
     AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Threads-CriticalSection
+        http://annocpan.org/dist/Thread-CriticalSection
 
     CPAN Ratings
-        http://cpanratings.perl.org/d/Threads-CriticalSection
+        http://cpanratings.perl.org/d/Thread-CriticalSection
 
     Search CPAN
-        http://search.cpan.org/dist/Threads-CriticalSection
+        http://search.cpan.org/dist/Thread-CriticalSection
 
 
 COPYRIGHT AND LICENCE
