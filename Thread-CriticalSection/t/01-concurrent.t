@@ -55,13 +55,13 @@ sub _safe_add_delta_to_counter {
 diag("First tests are supposed to cause havoc, including abnormal thread terminations.");
 $m_inside = 0; $c_inside = 0;
 my $value = _run_threads(\&_unsafe_add_delta_to_counter, $n_threads, $n_loops);
-isnt($value, 0, 'Counter is not 0, not safe updates');
+ok($value, "Counter is not 0 ($value), not safe updates");
 ok($m_inside, "Had some ($m_inside) multiple insiders");
 
 # Start the racers, safe race
 $m_inside = 0; $c_inside = 0;
 $value = _run_threads(\&_safe_add_delta_to_counter, $n_threads, $n_loops);
-is($value, 0, 'Counter is 0, safe updates');
+ok(!$value, 'Counter is 0, safe updates');
 ok(!$m_inside, "None ($m_inside) multiple insiders detected");
 
 
