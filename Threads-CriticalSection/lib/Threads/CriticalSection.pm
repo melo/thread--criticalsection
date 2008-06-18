@@ -45,7 +45,7 @@ sub execute {
 
 =head1 NAME
 
-Threads::CriticalSection - The great new Threads::CriticalSection!
+Threads::CriticalSection - Run a coderef inside a critical section
 
 =head1 VERSION
 
@@ -53,19 +53,51 @@ Version 0.01
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
-
+    use threads;
     use Threads::CriticalSection;
+    
+    my $cs = Threads::CriticalSection->new;
+    
+    $cs->execute(sub {
+      # your code is protected by $cs
+    });
+    
+    # you can also return stuff
+    my $result = $cs->execute(sub {
+      # do work in a cosy critical section
+      return $result;
+    });
+    
+    # and you can even use wantarray
+    my @victims = $cs->execute(sub {
+      # do work in a cosy critical section
+      return wantarray? @result : \@result;
+    });
 
-    my $foo = Threads::CriticalSection->new();
-    ...
+
+=head1 STATUS
+
+As of 2008/06/18, this module is considered beta quality. The interface
+should not suffer any changes but its a young module with very little use.
+
+
+=head1 DESCRIPTION
+
+The Threads::CriticalSection module allows you to run a coderef inside a
+critical section.
+
+All the details of entering and leaving the critical section are taken care
+of by the C<execute()> method.
+
+You can have several critical sections simultaneously inside your program.
+The usual care and feeding regarding deadlocks should be taken when calling
+execute recursively.
 
 
 =head1 AUTHOR
 
 Pedro Melo, C<< <melo at cpan.org> >>
+
 
 =head1 BUGS
 
