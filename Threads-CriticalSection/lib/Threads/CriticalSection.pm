@@ -91,7 +91,26 @@ of by the C<execute()> method.
 
 You can have several critical sections simultaneously inside your program.
 The usual care and feeding regarding deadlocks should be taken when calling
-execute recursively.
+C<execute()> recursively.
+
+
+=head1 METHODS
+
+=over 4
+
+=item * $cs = new()
+
+Creates and returns a new critical section. Requires no parameters.
+
+
+=item * [$return|@return] = $cs->execute(sub {}|$coderef)
+
+Executes the given $coderef inside the critical section. The $coderef
+can use wantarray to inspect the context of the call and react
+accordingly.
+
+
+=back
 
 
 =head1 AUTHOR
