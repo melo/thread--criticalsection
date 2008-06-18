@@ -80,6 +80,14 @@ Version 0.01
 As of 2008/06/18, this module is considered beta quality. The interface
 should not suffer any changes but its a young module with very little use.
 
+You'll still see "Scalars leaked" in the test suite, and I would like to
+get rid of them before declaring the code as stable.
+
+The abnormal thread terminations I get when running the test suite are
+in the unsafe tests, so I think I'm getting into perl threads issues,
+not bugs in this module. Prof of the opposite (in the form of failing
+tests) are most welcome.
+
 
 =head1 DESCRIPTION
 
