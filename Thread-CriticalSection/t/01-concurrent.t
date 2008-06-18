@@ -12,8 +12,8 @@ use Thread::CriticalSection;
 # run each thread for 100 loops
 # counter must be zero at the end
 
-my $n_threads = 10;
-my $n_loops = 100;
+my $n_threads = 50;
+my $n_loops = 250;
 my $cs = Thread::CriticalSection->new;
 
 my $c_inside : shared;
